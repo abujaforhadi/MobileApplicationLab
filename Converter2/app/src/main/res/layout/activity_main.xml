@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/value"
+        android:layout_margin="15dp"
+        android:hint="Enter Temperature"
+        android:inputType="number"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:id="@+id/showans"
+        android:text="0.00"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C to F"
+            android:id="@+id/ctof"/>
+
+        <RadioButton
+            android:id="@+id/ftoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="F to C" />
+    </RadioGroup>
+   <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/ans"
+       android:text="CONVERT"
+       android:layout_centerHorizontal="true"
+       />
+
+
+
+
+
+</LinearLayout>
