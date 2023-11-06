@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+
+        applicationId "de.ulrichraab.rxcontacts.app"
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode rootProject.ext.rxContactsVersionCode
+        versionName rootProject.ext.rxContactsVersionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    compile project(":rx-contacts")
+
+    compile "com.android.support:appcompat-v7:$rootProject.ext.androidSupportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.androidSupportVersion"
+
+    // Testing
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+}

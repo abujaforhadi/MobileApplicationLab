@@ -1,0 +1,62 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.novoda:bintray-release:0.8.0'
+        classpath 'org.ajoberstar:grgit:1.6.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+}
+
+import org.ajoberstar.grgit.Grgit
+
+ext {
+
+    git = Grgit.open(currentDir: projectDir)
+
+    rxContactsVersionCode = git.head().time
+    rxContactsVersionName = git.describe()
+
+    // sdk and tools
+    minSdkVersion = 16
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+
+    // dependencies
+    androidSupportVersion = '27.0.2'
+    rxAndroidVersion = '1.2.1'
+    rxJavaVersion = '1.1.9'
+
+    // testing
+    junitVersion = '4.12'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task printVersion() {
+    println("-------------------------------------")
+    println("Version code: $rxContactsVersionCode")
+    println("Version name: $rxContactsVersionName")
+    println("-------------------------------------")
+}
