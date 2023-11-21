@@ -6,16 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/a"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
-        android:layout_centerInParent="true"
-        android:text="A"
-        >
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/a"
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_centerInParent="true"
+            android:text="A"
+            >
 
-    </Button>
+<
+
+        </Button>
+        <view
+    </RelativeLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
